@@ -1,1 +1,1 @@
-web: gunicorn pipe_mvp.wsgi
+web: gunicorn wsgi:app
