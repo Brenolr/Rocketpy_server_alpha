@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, make_response
-from Environment import *
+from Environment import Environment
 # from Flight import *
 # from Function import *
 # from Rocket import *
