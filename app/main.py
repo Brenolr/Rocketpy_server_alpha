@@ -1,11 +1,11 @@
-from flask import Flask, jsonify, request, make_response
+# from flask import Flask, jsonify, request, make_response
 # from Environment import *
 # from Flight import *
 # from Function import *
 # from Rocket import *
 # from SolidMotor import *
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
 
 # def runEnv(inputs):
@@ -113,9 +113,9 @@ app = Flask(__name__)
 
 # data = DataStore()
 
-@app.route("/")
-def home_view():
-    return "<h1>Hello There</h1>"
+# @app.route("/")
+# def home_view():
+#     return "<h1>Hello There</h1>"
 
 
 # @app.route("/Env", methods=["GET", "POST", "OPTIONS"])
@@ -149,5 +149,11 @@ def home_view():
 #     response.headers.add("Access-Control-Allow-Headers", "*")
 #     response.headers.add("Access-Control-Allow-Methods", "*")
 #     return response
-
+from flask import Flask
+ 
+app = Flask(__name__)
+ 
+@app.route("/")
+def home_view():
+        return "<h1>Hello There</h1>"
 
