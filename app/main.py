@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request, make_response
-from Environment import *
-from Flight import *
-from Function import *
-from Rocket import *
-from SolidMotor import *
+# from Environment import *
+# from Flight import *
+# from Function import *
+# from Rocket import *
+# from SolidMotor import *
 
 app = Flask(__name__)
 
