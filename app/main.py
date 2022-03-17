@@ -118,36 +118,36 @@ def home_view():
         return "<h1>Hello There</h1>"
 
 
-@app.route("/Env", methods=["GET", "POST", "OPTIONS"])
-def environment():
-    if request.method == "OPTIONS":
-        return _build_cors_preflight_response()
-    if request.method == "POST":
-        runEnv(request.get_json())
-    response = jsonify(envInfo=data.env.jsonInfo, envPlot=data.env.jsonPlots)
-    return response
+# @app.route("/Env", methods=["GET", "POST", "OPTIONS"])
+# def environment():
+#     if request.method == "OPTIONS":
+#         return _build_cors_preflight_response()
+#     if request.method == "POST":
+#         runEnv(request.get_json())
+#     response = jsonify(envInfo=data.env.jsonInfo, envPlot=data.env.jsonPlots)
+#     return response
 
 
-# TODO: Create more routes, this thing is becoming MASSIVE
-# Data on GET methods: receiving 1657.9 KB of data, taking 2 secs avg, returning over 63k lines on a JSON
-@app.route("/Flight", methods=["GET", "POST", "OPTIONS"])
-def flight():
-    if request.method == "OPTIONS":
-        return _build_cors_preflight_response()
-    if request.method == "POST":
-        runFlight(request.get_json())
-    response = jsonify(
-        flightInfo=data.flight.jsonInfo, flightPlot=data.flight.jsonPlots
-    )
-    return response
+# # TODO: Create more routes, this thing is becoming MASSIVE
+# # Data on GET methods: receiving 1657.9 KB of data, taking 2 secs avg, returning over 63k lines on a JSON
+# @app.route("/Flight", methods=["GET", "POST", "OPTIONS"])
+# def flight():
+#     if request.method == "OPTIONS":
+#         return _build_cors_preflight_response()
+#     if request.method == "POST":
+#         runFlight(request.get_json())
+#     response = jsonify(
+#         flightInfo=data.flight.jsonInfo, flightPlot=data.flight.jsonPlots
+#     )
+#     return response
 
 
-@app.route("/Env/plots/", methods=["GET"])
-def _build_cors_preflight_response():
-    response = make_response()
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    response.headers.add("Access-Control-Allow-Headers", "*")
-    response.headers.add("Access-Control-Allow-Methods", "*")
-    return response
+# @app.route("/Env/plots/", methods=["GET"])
+# def _build_cors_preflight_response():
+#     response = make_response()
+#     response.headers.add("Access-Control-Allow-Origin", "*")
+#     response.headers.add("Access-Control-Allow-Headers", "*")
+#     response.headers.add("Access-Control-Allow-Methods", "*")
+#     return response
 
 
