@@ -113,6 +113,11 @@ class DataStore:
 
 data = DataStore()
 
+@app.route("/")
+def home_view():
+        return "<h1>Hello There</h1>"
+
+
 @app.route("/Env", methods=["GET", "POST", "OPTIONS"])
 def environment():
     if request.method == "OPTIONS":
